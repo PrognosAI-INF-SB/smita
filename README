@@ -1,0 +1,122 @@
+🚀 PrognosAI: AI-Driven Predictive Maintenance System
+
+📌 Project Overview
+
+PrognosAI is an AI-powered predictive maintenance system designed to estimate the Remaining Useful Life (RUL) of industrial machinery using multivariate time-series sensor data.
+
+By leveraging deep learning models (LSTM/GRU), the system can detect patterns in sensor readings, enabling:
+
+⏱️ Timely maintenance decisions
+
+⚡ Minimization of unplanned downtime
+
+🏭 Optimization of asset utilization
+
+The project uses the NASA CMAPSS dataset and is designed to generalize across turbines, pumps, motors, and other industrial machines.
+
+🛠️ Project Workflow
+
+📥 Data Ingestion: Load and preprocess CMAPSS sensor data.
+
+🔧 Feature Engineering: Create rolling window sequences and compute RUL targets.
+
+🤖 Model Training: Train LSTM/GRU models to predict RUL.
+
+📊 Model Evaluation: Evaluate performance using RMSE and visualize predictions.
+
+⚠️ Risk Thresholding: Set thresholds to trigger maintenance alerts.
+
+📈 Visualization & Output: Present trends and predictions via charts and dashboards.
+
+🎯 Milestone 1: Data Preparation & Feature Engineering
+
+Objective: Prepare the NASA CMAPSS dataset for model training by cleaning, preprocessing, and generating relevant features and RUL targets.
+
+Deliverables:
+
+🧹 Cleaned and preprocessed sensor data
+
+📝 Python scripts for data loading and preprocessing:
+
+milestone1_prep.py
+
+data_preprocessing.py
+
+feature_engineering.py
+
+🔄 Rolling window sequences generated
+
+🎯 Computed RUL targets
+
+Key Tools: Python 🐍 | Pandas | NumPy | Scikit-learn
+
+🎯 Milestone 2: Model Development & Training
+
+Objective: Develop and train a deep learning model to predict engine RUL.
+
+Deliverables:
+
+🤖 Implemented LSTM/GRU model architecture
+
+💾 Trained model saved (.h5 or .keras)
+
+📉 Training & validation loss curves
+
+Python script: train_model.py
+
+Key Tools: Python 🐍 | TensorFlow / Keras | Matplotlib | Seaborn
+
+📂 Folder Structure
+PrognosAI_Project/
+│
+├─ Milestone1/
+│   ├─ data/
+│   │   ├─ train_FD*.txt
+│   │   └─ test_FD*.txt
+│   └─ scripts/
+│       ├─ milestone1_prep.py
+│       ├─ data_preprocessing.py
+│       └─ feature_engineering.py
+│
+├─ Milestone2/
+│   ├─ data/
+│   │   └─ converted_csv/
+│   │       └─ train_FD001.txt
+│   └─ scripts/
+│       ├─ train_model.py
+│       └─ visualize_results.py
+│
+└─ README.md
+
+⚡ How to Run
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+
+Milestone 1: Preprocess data and generate features
+
+python Milestone1/scripts/milestone1_prep.py
+
+
+Milestone 2: Train the model
+
+python Milestone2/scripts/train_model.py
+
+
+Visualize results:
+
+python Milestone2/scripts/visualize_results.py
+
+🔮 Future Milestones
+
+Milestone 3: Model Evaluation & Performance Assessment
+
+Milestone 4: Risk Thresholding & Alert System
+
+Milestone 5: Interactive Dashboard Development
+
+🧰 Tech Stack
+
+Python 🐍 | Pandas | NumPy | Matplotlib | Seaborn | TensorFlow / Keras | Scikit-learn | Streamlit / Flask (future dashboard)
