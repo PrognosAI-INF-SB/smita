@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>PrognosAI - Input</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+  <div class="input-form">
+    <h2>Enter Sensor Values</h2>
+    <form id="predictForm">
+      {% for i in range(1, 22) %}
+      <label for="s{{ i }}">Sensor {{ i }}</label>
+      <input type="number" step="any" name="s{{ i }}" required><br>
+      {% endfor %}
+      <button type="submit">Predict Health</button>
+    </form>
+
+    <div id="result"></div>
+    <a href="/dashboard" class="btn">📊 View Dashboard</a>
+  </div>
+
+  <script>
+    $("#predictForm").on("submit", function(e) {
+        e.preventDefault();
+        $.ajax({
+            url: "/predict",
+            type: "POST",
+            data: $(this).serialize(),
+            success: function(response) {
+                if (response.success) {
+                    $("#result").html("<h3>Predicted Health Score: " + response.health_score + "</h3>");
+                } else {
+                    $("#result").html("<p style='color:red;'>Error: " + response.error + "</p>");
+                }
+            }
+        });
+    });
+  </script>
+</body>
+</html>
