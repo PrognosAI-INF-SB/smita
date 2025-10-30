@@ -227,4 +227,4 @@ else:
 
 # ---------- Footer ----------
 st.markdown("---")
-st.markdown("Built with ❤️ using Streamlit — enter feature values and predict machine health (RUL).")
+st.markdown("Built with using Streamlit — enter feature values and predict machine health (RUL).")
